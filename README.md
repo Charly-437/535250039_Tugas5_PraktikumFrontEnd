@@ -12,4 +12,14 @@ NIM : 535250039
 - Material UI / MUI (untuk icon)
 - TypeScript
 
-terima kasih sudah berkunjung
+## Cara Menjalankan Proyek
+1. Clone repositori ini atau ekstrak foldernya
+2. Buka terminal di dalam folder proyek, lalu jalankan:
+   ```bash
+   npm install
+3. Setelah semua dependensi terinstal, jalankan server pengembangan:
+   ```bash
+   npm run dev
+4. Buka http://localhost:3000 di browser untuk melihat hasilnya.
+
+Terima kasih sudah berkunjung
