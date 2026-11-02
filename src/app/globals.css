@@ -1,13 +1,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --pink-light: #fdf2f8;
+  --pink-dark: #d63384;
+  --pink-hover: #a61e64;
 }
 
 html {
@@ -16,7 +12,7 @@ html {
 
 html,
 body {
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -28,7 +24,6 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -42,8 +37,89 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+main {
+  flex: 1;
+}
+
+/* Custom button pink tua */
+.btn-pink {
+  background-color: var(--pink-dark);
+  color: white;
+  border: none;
+}
+.btn-pink:hover {
+  background-color: var(--pink-hover);
+  color: white;
+}
+
+/* Background contact section */
+#contact {
+  background: url('/images/map.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  background-color: var(--pink-light); /* Fallback jika gambar gagal load */
+}
+
+/* Styling footer */
+#footer ul li a {
+  color: #4a4a4a;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+#footer ul li a:hover {
+  color: var(--pink-dark);
+  text-decoration: underline;
+}
+
+/* Icon service */
+.service-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+  background-color: #fdf2f8 !important; 
+  position: sticky;
+  top: 0;          
+  z-index: 9999;    /* navbar selalu di atas konten lain  */
+}
+
+.custom-navbar .nav-link {
+  color: #333333 !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+/* Efek hover dan menu aktif */
+.custom-navbar .nav-link:hover {
+  color: #d63384 !important; 
+  background-color: #fce4ec; 
+}
+
+/* Styling untuk dropdown (Menu Products) */
+.custom-navbar .dropdown-menu {
+  background-color: #ffffff;
+  border-color: #f8bbd0;
+}
+
+.custom-navbar .dropdown-item {
+  color: #333333;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #fce4ec;
+  color: #d63384;
 }
