@@ -9,28 +9,28 @@ export default function Footer() {
           <Col md={3} className="mb-4">
             <h5 className="fw-bold mb-3">Produk Kami</h5>
             <ul className="list-unstyled">
-              <li className="mb-2"><a href="#">Matcha Mochi</a></li>
-              <li className="mb-2"><a href="#">Strawberry Daifuku</a></li>
-              <li className="mb-2"><a href="#">Choco Lava</a></li>
+              <li className="mb-2"><a href="#matcha">Matcha Mochi</a></li>
+              <li className="mb-2"><a href="#strawberry">Strawberry Daifuku</a></li>
+              <li className="mb-2"><a href="#choco">Choco Lava</a></li>
             </ul>
           </Col>
-          
+
           <Col md={3} className="mb-4">
             <h5 className="fw-bold mb-3">Tautan Cepat</h5>
             <ul className="list-unstyled">
               <li className="mb-2"><a href="#home">Home</a></li>
               <li className="mb-2"><a href="#about">Tentang Kami</a></li>
-              <li className="mb-2"><a href="#products">Layanan</a></li>
+              <li className="mb-2"><a href="#services">Layanan</a></li>
               <li className="mb-2"><a href="#contact">Kontak</a></li>
             </ul>
           </Col>
 
           <Col md={3} className="mb-4">
-            <h5 className="fw-bold mb-3">Kebijakan</h5>
+            <h5 className="fw-bold mb-3">Info & Bantuan</h5>
             <ul className="list-unstyled">
-              <li className="mb-2"><a href="#">Kebijakan Pengembalian</a></li>
-              <li className="mb-2"><a href="#">Kebijakan Privasi</a></li>
-              <li className="mb-2"><a href="#">Syarat & Ketentuan</a></li>
+              <li className="mb-2"><a href="#products">Informasi Produk</a></li>
+              <li className="mb-2"><a href="#services">Informasi Pengiriman</a></li>
+              <li className="mb-2"><a href="#contact">Pemesanan Mochi</a></li>
             </ul>
           </Col>
 
@@ -39,15 +39,17 @@ export default function Footer() {
             <Form className="mb-4">
               <InputGroup>
                 <Form.Control type="text" placeholder="Cari mochi..." />
-                <Button className="btn-pink">Cari</Button>
+                <Button className="btn-pink" type="button">Cari</Button>
               </InputGroup>
             </Form>
+
             <h5 className="fw-bold mb-3">Ikuti Kami</h5>
             <ul className="list-unstyled d-flex gap-3">
-              <li><a href="#"><i className="bi bi-facebook fs-5"></i></a></li>
-              <li><a href="#"><i className="bi bi-twitter fs-5"></i></a></li>
-              <li><a href="#"><i className="bi bi-instagram fs-5"></i></a></li>
-              <li><a href="#"><i className="bi bi-youtube fs-5"></i></a></li>
+              {/* Ikon media sosial dapat diberi link kalo akun resmi tersedia. */}
+              <li><i className="bi bi-facebook fs-5" aria-label="Facebook"></i></li>
+              <li><i className="bi bi-twitter fs-5" aria-label="Twitter"></i></li>
+              <li><i className="bi bi-instagram fs-5" aria-label="Instagram"></i></li>
+              <li><i className="bi bi-youtube fs-5" aria-label="YouTube"></i></li>
             </ul>
           </Col>
         </Row>

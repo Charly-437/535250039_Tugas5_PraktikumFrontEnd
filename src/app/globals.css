@@ -8,6 +8,8 @@
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
 html,
@@ -41,26 +43,50 @@ main {
   flex: 1;
 }
 
+/* ========================================
+   BUTTON
+======================================== */
+
 /* Custom button pink tua */
 .btn-pink {
   background-color: var(--pink-dark);
   color: white;
   border: none;
+  transition: background-color 0.3s ease;
 }
+
 .btn-pink:hover {
   background-color: var(--pink-hover);
   color: white;
 }
 
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
 /* Background contact section */
-#contact {
-  background: url('/images/map.jpg'); 
+.contact-section {
+  background: url('/images/map.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 400px;
   background-color: var(--pink-light); /* Fallback jika gambar gagal load */
+  padding: 1px 0;
 }
+
+/* ========================================
+   PRODUCT SECTION
+======================================== */
+
+/* Background produk */
+.products-section {
+  background-color: var(--pink-light);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
 
 /* Styling footer */
 #footer ul li a {
@@ -69,10 +95,15 @@ main {
   text-decoration: none;
   transition: 0.3s ease;
 }
+
 #footer ul li a:hover {
   color: var(--pink-dark);
   text-decoration: underline;
 }
+
+/* ========================================
+   SERVICE SECTION
+======================================== */
 
 /* Icon service */
 .service-img {
@@ -82,16 +113,16 @@ main {
   margin-bottom: 15px;
 }
 
-.text-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
-}
+/* ========================================
+   NAVBAR
+======================================== */
 
-/* Custom Navbar */
+/* Navbar */
 .custom-navbar {
-  background-color: #fdf2f8 !important; 
+  background-color: #fdf2f8 !important;
   position: sticky;
-  top: 0;          
-  z-index: 9999;    /* navbar selalu di atas konten lain  */
+  top: 0;
+  z-index: 9999; /* navbar selalu di atas konten lain */
 }
 
 .custom-navbar .nav-link {
@@ -104,11 +135,19 @@ main {
 
 /* Efek hover dan menu aktif */
 .custom-navbar .nav-link:hover {
-  color: #d63384 !important; 
-  background-color: #fce4ec; 
+  color: #d63384 !important;
+  background-color: #fce4ec;
 }
 
-/* Styling untuk dropdown (Menu Products) */
+/* Styling menu aktif */
+.custom-navbar .nav-link.active,
+.custom-navbar .dropdown-toggle.active {
+  color: #d63384 !important;
+  background-color: #fce4ec;
+  font-weight: 700;
+}
+
+/* Styling untuk dropdown */
 .custom-navbar .dropdown-menu {
   background-color: #ffffff;
   border-color: #f8bbd0;
@@ -119,7 +158,245 @@ main {
   transition: all 0.3s ease;
 }
 
-.custom-navbar .dropdown-item:hover {
+.custom-navbar .dropdown-item:hover,
+.custom-navbar .dropdown-item:focus {
   background-color: #fce4ec;
   color: #d63384;
+}
+
+/* ========================================
+   HERO SECTION 
+======================================== */
+
+/* Ukuran dan tampilan carousel */
+.hero-carousel {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.hero-carousel .carousel-item {
+  position: relative;
+}
+
+/* Ukuran gambar banner */
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Lapisan gelap agar tulisan lebih mudah dibaca */
+.hero-carousel .carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+/* Tulisan carousel ditengah */
+.hero-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 750px;
+  padding: 15px 20px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Judul pada banner */
+.hero-caption h3 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Deskripsi pada banner */
+.hero-caption p {
+  color: #fff4f8;
+  font-size: 16px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  margin-bottom: 0;
+}
+
+/* ========================================
+   ABOUT SECTION
+======================================== */
+
+.about-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ========================================
+   PRODUCT CARD ANIMATION
+======================================== */
+
+/* Efek hover pada card produk */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card sedikit naik ketika cursor diarahkan */
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(214, 51, 132, 0.2) !important;
+}
+
+/* Animasi gambar produk */
+.product-img {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Highlight lebih jelas ketika produk dipilih dari navigasi */
+.product-card:target {
+  position: relative;
+  z-index: 2;
+  animation: product-highlight 3s ease-in-out 2;
+}
+
+@keyframes product-highlight {
+  0%, 100% {
+    outline: 0 solid transparent;
+    box-shadow: 0 0 0 rgba(214, 51, 132, 0);
+    transform: scale(1);
+  }
+
+  20%, 45% {
+    outline: 4px solid #d63384;
+    box-shadow:
+      0 0 0 7px rgba(214, 51, 132, 0.15),
+      0 12px 35px rgba(214, 51, 132, 0.4);
+    transform: scale(1.035);
+  }
+
+  65% {
+    outline: 2px solid rgba(214, 51, 132, 0.5);
+    box-shadow: 0 5px 20px rgba(214, 51, 132, 0.25);
+    transform: scale(1.01);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+/* Tablet */
+@media (max-width: 991px) {
+
+  /* About Us pada tablet */
+  .about-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+}
+
+/* Tablet ukuran lebih kecil lagi */
+@media (max-width: 768px) {
+
+  /* Hero Carousel */
+  .hero-image {
+    height: 300px;
+  }
+
+  .hero-caption {
+    width: 85%;
+    padding: 15px 20px;
+  }
+
+  .hero-caption h3 {
+    font-size: 26px;
+  }
+
+  .hero-caption p {
+    font-size: 15px;
+  }
+
+  /* About Us */
+  .about-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* HP */
+@media (max-width: 576px) {
+
+  /* Hero Carousel */
+  .hero-image {
+    height: 230px;
+  }
+
+  .hero-caption {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .hero-caption h3 {
+    font-size: 20px;
+  }
+
+  .hero-caption p {
+    font-size: 13px;
+  }
+
+  /* Navbar */
+  .custom-navbar form {
+    margin-top: 10px;
+  }
+
+  /* About Us */
+  .about-image {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Contact */
+  .contact-section {
+    min-height: 350px;
+  }
+}
+
+/* Mengurangi animasi jika pengguna memilih reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .product-card,
+  .product-img {
+    transition: none;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+
+  .product-card:hover .product-img {
+    transform: none;
+  }
+
+  .product-card:target {
+    animation: none;
+  }
 }
